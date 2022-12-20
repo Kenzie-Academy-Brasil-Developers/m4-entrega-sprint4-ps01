@@ -18,8 +18,7 @@ const emailUnavailablemiddleware = async (
   const emailUnavailable = await userRepository.findOneBy({
     email: email,
   });
-  console.log(email);
-  console.log(emailUnavailable);
+
   if (emailUnavailable) {
     return res.status(400).json({ message: "Email unavailable" });
   }

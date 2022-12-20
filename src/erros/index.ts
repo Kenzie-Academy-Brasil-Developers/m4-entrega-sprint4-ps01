@@ -16,9 +16,9 @@ export const handleError = (
   next: NextFunction
 ) => {
   if (err instanceof AppError) {
-    console.error(err.message);
+    //console.error(err.message);
     return res.status(err.statusCode).json({ message: err.message });
   }
-  console.error(err.message);
+  //console.error(err.message);
   return res.status(500).json({ message: err.message });
 };

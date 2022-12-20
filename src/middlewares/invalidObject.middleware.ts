@@ -17,7 +17,6 @@ const invalidObjectMiddleware = async (
     return res.status(401).json({ message: "invalid object" });
   }
 
-  console.log(invalidObject);
   return next();
 };
 

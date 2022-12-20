@@ -7,7 +7,6 @@ const idIsValidmiddleware = async (
   res: Response,
   next: NextFunction
 ) => {
-  // try {
   const userRepository = AppDataSource.getRepository(Users);
 
   const idIsValid = await userRepository.findOneBy({
@@ -19,9 +18,6 @@ const idIsValidmiddleware = async (
   }
 
   return next();
-  // } catch (error) {
-  //   return res.status(405).json({ message: "Method not allowed" });
-  // }
 };
 
 export default idIsValidmiddleware;
